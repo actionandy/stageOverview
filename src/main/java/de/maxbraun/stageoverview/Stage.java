@@ -5,19 +5,20 @@ import lombok.Data;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
 @RequiredArgsConstructor
-class StageModel {
+class Stage implements Serializable {
     @NonNull private final String name;
     private final String contactFrontend;
     private final String contactBackend;
-    private List<ApplicationModel> applicationModelList = new ArrayList<ApplicationModel>();
+    private List<Application> applicationList = new ArrayList<Application>();
 
-    public StageModel addApplication(ApplicationModel applicationModel) {
-        applicationModelList.add(applicationModel);
+    public Stage addApplication(Application application) {
+        applicationList.add(application);
         return this;
     }
 

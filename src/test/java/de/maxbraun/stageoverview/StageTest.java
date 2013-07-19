@@ -4,22 +4,22 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class StageModelTest {
+public class StageTest {
     @Test
     public void testStageModel() throws Exception {
-        StageModel stage;
-        ApplicationModel applicationModel;
+        Stage stage;
+        Application application;
 
-        stage = new StageModel("test", "test1", "test2");
-        applicationModel = new ApplicationModel("ab", "c", "foo");
+        stage = new Stage("test", "test1", "test2");
+        application = new Application("ab", "c", "foo");
 
         assertEquals(stage.getName(), "test");
         assertEquals(stage.getContactFrontend(), "test1");
         assertEquals(stage.getContactBackend(), "test2");
         assertEquals(stage.getContactBackend(), "test2");
 
-        stage.addApplication(applicationModel);
-        assertEquals(applicationModel, stage.getApplicationModelList().get(0));
+        stage.addApplication(application);
+        assertEquals(application, stage.getApplicationList().get(0));
     }
 
 }

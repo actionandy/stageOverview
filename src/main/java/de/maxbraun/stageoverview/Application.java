@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 
 @Data
 @RequiredArgsConstructor
-public class ApplicationModel {
+public class Application {
 
     public final String groupId;
     @NonNull public final String artifactId;
