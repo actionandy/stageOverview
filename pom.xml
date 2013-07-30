@@ -32,6 +32,15 @@
             </roles>
             <timezone>+1</timezone>
         </developer>
+        <developer>
+            <id>actionandy</id>
+            <url>http://github.com/actionandy</url>
+            <organization>1&amp;1 Internet AG</organization>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
     </developers>
 
     <scm>
