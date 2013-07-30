@@ -1,5 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>net.oneandone.maven.poms</groupId>
+        <artifactId>foss-parent</artifactId>
+        <version>1.3.5</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.springapp</groupId>
     <artifactId>StageOverview</artifactId>
@@ -10,6 +15,31 @@
     <properties>
         <spring.version>3.2.0.RELEASE</spring.version>
     </properties>
+
+    <ciManagement>
+        <system>TravisCi</system>
+        <url>https://travis-ci.org/maxbraun/job-profiles</url>
+    </ciManagement>
+
+    <developers>
+        <developer>
+            <id>maxbraun</id>
+            <url>http://github.com/maxbraun</url>
+            <organization>1&amp;1 Internet AG</organization>
+            <roles>
+                <role>Developer</role>
+                <role>Project Lead</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:ssh://git@github.com/maxbraun/stageOverview.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/maxbraun/stageOverview.git</developerConnection>
+        <tag>none</tag>
+        <url>https://github.com/maxbraun/stageOverview</url>
+    </scm>
 
     <dependencies>
         <dependency>
@@ -54,11 +84,6 @@
             <version>${spring.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-            <version>1.9.12</version>
-        </dependency>
 
 
         <dependency>
@@ -94,6 +119,17 @@
                     </includes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <path>/</path>
+                    <warDirectory>${war.dir}</warDirectory>
+                    <uriEncoding>UTF-8</uriEncoding>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 </project>
